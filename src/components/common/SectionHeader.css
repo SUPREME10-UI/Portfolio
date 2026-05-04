@@ -1,0 +1,29 @@
+.section-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.header-subtitle {
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.header-line {
+    width: 80px;
+    height: 4px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+}

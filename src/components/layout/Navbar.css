@@ -1,0 +1,134 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition-normal);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    height: 70px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme='light'] .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.accent {
+    color: var(--accent-primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: var(--transition-fast);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-socials {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-left: var(--spacing-sm);
+    padding-left: var(--spacing-sm);
+    border-left: 1px solid var(--border-color);
+}
+
+.nav-socials a {
+    color: var(--text-secondary);
+}
+
+.nav-socials a:hover {
+    color: var(--accent-primary);
+}
+
+.theme-toggle {
+    color: var(--text-secondary);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-primary);
+}
+
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-secondary);
+        flex-direction: column;
+        padding: var(--spacing-xl) 0;
+        transition: 0.4s ease-in-out;
+        z-index: -1;
+    }
+
+    .nav-links.active {
+        top: 0;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-socials {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: var(--spacing-md);
+    }
+}
