@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="container footer-container">
                 <div className="footer-top">
                     <div className="footer-logo">
-                        <span className="mono">&lt;Kobby /&gt;</span>
+                        <span className="mono">&lt;Ebenezer Adjei /&gt;</span>
                     </div>
                     <div className="footer-socials">
                         <a href="https://github.com/SUPREME10-UI" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><Github size={20} /></a>
@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© {new Date().getFullYear()} Kobby. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} Ebenezer Adjei. All rights reserved.</p>
                     <div className="footer-links mono">
                         <a href="#about">About</a>
                         <a href="#projects">Projects</a>

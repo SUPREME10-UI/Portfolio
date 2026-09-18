@@ -212,12 +212,12 @@ export default function ShaderShowcase({
         </header>
       )}
 
-      <main className="relative z-20 w-full min-h-screen flex items-center justify-center px-6 sm:px-10 lg:px-16 pt-28 pb-16">
-        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+      <main className="relative z-20 w-full min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
+        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: About Me Bio, Stats, CTAs */}
           <div className="lg:col-span-7 text-left flex flex-col justify-center">
             <motion.div
-              className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm mb-6 relative border border-white/10 w-fit"
+              className="inline-flex items-center px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 backdrop-blur-sm mb-4 sm:mb-6 relative border border-white/10 w-fit max-w-full"
               style={{
                 filter: "url(#glass-effect)",
               }}
@@ -226,20 +226,20 @@ export default function ShaderShowcase({
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent rounded-full" />
-              <span className="text-cyan-300 text-xs sm:text-sm font-medium relative z-10 tracking-wide flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="text-cyan-300 text-xs sm:text-sm font-medium relative z-10 tracking-wide flex items-center gap-2 truncate">
+                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
                 Full-Stack Developer & Software Engineer
               </span>
             </motion.div>
 
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.span
-                className="block font-light text-white/90 text-2xl sm:text-3xl md:text-4xl mb-1 tracking-wider"
+                className="block font-light text-white/90 text-xl sm:text-3xl md:text-4xl mb-1 tracking-wider"
                 style={{
                   background: "linear-gradient(135deg, #ffffff 0%, #06b6d4 30%, #f97316 70%, #ffffff 100%)",
                   WebkitBackgroundClip: "text",
@@ -256,56 +256,56 @@ export default function ShaderShowcase({
                   ease: "linear",
                 }}
               >
-                Hi, I'm
+                Hi, I am
               </motion.span>
-              <span className="block font-black text-white drop-shadow-2xl text-5xl sm:text-6xl md:text-7xl">
-                Kobby
+              <span className="block font-black text-white drop-shadow-2xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl break-words">
+                Ebenezer Adjei
               </span>
-              <span className="block font-light text-white/80 italic text-xl sm:text-2xl md:text-3xl mt-2 text-cyan-200/90">
+              <span className="block font-light text-white/80 italic text-base sm:text-2xl md:text-3xl mt-2 text-cyan-200/90 leading-snug">
                 Engineering Elegant Solutions to Real-World Problems
               </span>
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg font-light text-white/75 mb-6 leading-relaxed max-w-2xl"
+              className="text-sm sm:text-base md:text-lg font-light text-white/75 mb-6 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              I'm a dedicated <span className="text-white font-medium">Full-Stack Developer</span> with a strong foundation in building intuitive, high-performance web applications from the ground up. I specialise in <span className="text-cyan-300 font-medium">React, TypeScript, and modern JavaScript</span> ecosystems — delivering end-to-end digital solutions that are clean, scalable, and impactful.
+              I am a dedicated <span className="text-white font-medium">Full-Stack Developer</span> with a strong foundation in building intuitive, high-performance web applications from the ground up. I specialise in <span className="text-cyan-300 font-medium">React, TypeScript, and modern JavaScript</span> ecosystems — delivering end-to-end digital solutions that are clean, scalable, and impactful.
             </motion.p>
 
             {/* About Stats Cards */}
             <motion.div
-              className="grid grid-cols-3 gap-3 sm:gap-4 mb-8 max-w-xl"
+              className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
-                <span className="block text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">11+</span>
-                <span className="text-[10px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Projects</span>
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
+                <span className="block text-xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">11+</span>
+                <span className="text-[9px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Projects</span>
               </div>
-              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-orange-400/40 transition-all duration-300">
-                <span className="block text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">5+</span>
-                <span className="text-[10px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Years Exp</span>
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-4 text-center hover:border-orange-400/40 transition-all duration-300">
+                <span className="block text-xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">5+</span>
+                <span className="text-[9px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Years Exp</span>
               </div>
-              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
-                <span className="block text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">12+</span>
-                <span className="text-[10px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Tech Tools</span>
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
+                <span className="block text-xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">12+</span>
+                <span className="text-[9px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Tech Tools</span>
               </div>
             </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex items-center gap-4 flex-wrap"
+              className="flex items-center gap-2.5 sm:gap-4 flex-wrap"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.a
                 href="#projects"
-                className="px-7 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-orange-500 text-white font-semibold text-sm transition-all duration-300 hover:from-cyan-400 hover:to-orange-400 cursor-pointer shadow-lg hover:shadow-cyan-500/25 inline-flex items-center gap-2"
+                className="w-full sm:w-auto justify-center text-center px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-orange-500 text-white font-semibold text-xs sm:text-sm transition-all duration-300 hover:from-cyan-400 hover:to-orange-400 cursor-pointer shadow-lg hover:shadow-cyan-500/25 inline-flex items-center gap-2"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -313,7 +313,7 @@ export default function ShaderShowcase({
               </motion.a>
               <motion.a
                 href="#contact"
-                className="px-7 py-3 rounded-full bg-transparent border border-white/30 text-white font-medium text-sm transition-all duration-300 hover:bg-white/10 hover:border-cyan-400/50 hover:text-cyan-100 cursor-pointer backdrop-blur-sm inline-flex items-center gap-2"
+                className="flex-1 sm:flex-initial justify-center text-center px-5 sm:px-7 py-3 rounded-full bg-transparent border border-white/30 text-white font-medium text-xs sm:text-sm transition-all duration-300 hover:bg-white/10 hover:border-cyan-400/50 hover:text-cyan-100 cursor-pointer backdrop-blur-sm inline-flex items-center gap-2"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -321,7 +321,7 @@ export default function ShaderShowcase({
               </motion.a>
               <motion.a
                 href="#skills"
-                className="px-5 py-3 rounded-full bg-white/5 border border-white/10 text-white/70 hover:text-white font-normal text-xs sm:text-sm transition-all duration-300 hover:bg-white/10 cursor-pointer backdrop-blur-sm"
+                className="flex-1 sm:flex-initial justify-center text-center px-4 sm:px-5 py-3 rounded-full bg-white/5 border border-white/10 text-white/70 hover:text-white font-normal text-xs sm:text-sm transition-all duration-300 hover:bg-white/10 cursor-pointer backdrop-blur-sm"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
               >
@@ -331,9 +331,9 @@ export default function ShaderShowcase({
           </div>
 
           {/* Right Column: Picture Image Section + Pulsing Hologram Badge */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative w-full mt-4 lg:mt-0">
             <motion.div
-              className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px]"
+              className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[390px]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -346,7 +346,7 @@ export default function ShaderShowcase({
                 <div className="aspect-[4/5] w-full overflow-hidden relative">
                   <img
                     src="/kobby.jpg"
-                    alt="Kobby - Full-Stack Developer"
+                    alt="Ebenezer Adjei - Full-Stack Developer"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                     loading="eager"
                   />
@@ -354,22 +354,22 @@ export default function ShaderShowcase({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
                   {/* Top Status Tag */}
-                  <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white/90 text-xs font-mono">
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white/90 text-[11px] sm:text-xs font-mono">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                     <span>Available for hire</span>
                   </div>
 
                   {/* Bottom Image Info */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-white font-semibold text-lg drop-shadow">Kobby</p>
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+                    <p className="text-white font-semibold text-base sm:text-lg drop-shadow">Ebenezer Adjei</p>
                     <p className="text-cyan-300 text-xs font-mono">Full-Stack Developer</p>
                   </div>
                 </div>
               </div>
 
               {/* Pulsing Border Badge Seal */}
-              <div className="absolute -bottom-6 -right-6 sm:-bottom-8 sm:-right-8 z-30">
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
+              <div className="absolute -bottom-4 -right-2 sm:-bottom-7 sm:-right-7 z-30 scale-85 sm:scale-100">
+                <div className="relative w-22 h-22 sm:w-28 sm:h-28 flex items-center justify-center">
                   <PulsingBorder
                     colors={["#06b6d4", "#0891b2", "#f97316", "#00FF88", "#FFD700", "#FF6B35", "#ffffff"]}
                     colorBack="#00000000"
@@ -411,7 +411,7 @@ export default function ShaderShowcase({
                     </defs>
                     <text className="text-[11px] fill-white/90 font-medium tracking-widest font-mono">
                       <textPath href="#circle" startOffset="0%">
-                        KOBBY • SOFTWARE ENGINEER • FULL-STACK DEVELOPER •
+                        EBENEZER ADJEI • SOFTWARE ENGINEER • FULL-STACK DEVELOPER •
                       </textPath>
                     </text>
                   </motion.svg>

@@ -59,7 +59,7 @@ const Navbar = () => {
                 <div className="logo">
                     <a href="#" className="mono">
                         <span className="accent">&lt;</span>
-                        Kobby
+                        Ebenezer Adjei
                         <span className="accent"> /&gt;</span>
                     </a>
                 </div>
@@ -87,13 +87,18 @@ const Navbar = () => {
                             <Linkedin size={20} />
                         </a>
                     </div>
-                    <button onClick={toggleTheme} className="theme-toggle">
+                    <button onClick={toggleTheme} className="theme-toggle hidden md:flex" aria-label="Toggle Theme">
                         {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                     </button>
                 </div>
 
-                <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X size={28} /> : <Menu size={28} />}
+                <div className="mobile-actions">
+                    <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">
+                        {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                    </button>
+                    <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Navigation Menu">
+                        {isOpen ? <X size={26} /> : <Menu size={26} />}
+                    </button>
                 </div>
             </div>
         </nav>

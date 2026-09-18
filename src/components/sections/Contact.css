@@ -151,3 +151,46 @@
         gap: var(--spacing-lg);
     }
 }
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1.25rem;
+        border-radius: 10px;
+        gap: 1rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-methods {
+        gap: 1rem;
+    }
+
+    .method-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .method-text a,
+    .method-text span:last-child {
+        font-size: 0.95rem;
+    }
+
+    .phone-links a {
+        font-size: 0.95rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}

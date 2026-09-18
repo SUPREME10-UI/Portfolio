@@ -97,3 +97,38 @@
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .skill-category {
+        padding: 1.25rem;
+    }
+
+    .category-header {
+        margin-bottom: 0.85rem;
+        gap: 10px;
+    }
+
+    .category-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .workflow-section {
+        margin-top: 2rem;
+        padding: 1.25rem;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .center {
+        margin-bottom: 1.25rem;
+    }
+}

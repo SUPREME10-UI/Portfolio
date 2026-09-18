@@ -25,7 +25,7 @@ interface ProfileSlide {
 
 const slides: ProfileSlide[] = [
   {
-    name: "Kobby",
+    name: "Ebenezer Adjei",
     title: "Full-Stack Developer",
     description:
       "I am a passionate Full-Stack Developer with over 5 years of experience crafting digital solutions that bridge the gap between complex backend architectures and intuitive, high-performance user interfaces. I thrive on solving complex problems and turning abstract ideas into functional reality.",
@@ -36,10 +36,10 @@ const slides: ProfileSlide[] = [
     linkedinUrl: "https://linkedin.com",
   },
   {
-    name: "Kobby",
+    name: "Ebenezer Adjei",
     title: "Creative Problem Solver",
     description:
-      "My journey began with a curiosity for how things work, which naturally led me to the world of software engineering. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical writing and mentorship.",
+      "My journey began with a curiosity for how things work, which naturally led me to the world of software engineering. When I am not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical writing and mentorship.",
     imageUrl: "/kobby.jpg",
     githubUrl: "https://github.com/SUPREME10-UI",
     twitterUrl: "https://twitter.com",
@@ -47,7 +47,7 @@ const slides: ProfileSlide[] = [
     linkedinUrl: "https://linkedin.com",
   },
   {
-    name: "Kobby",
+    name: "Ebenezer Adjei",
     title: "Open-Source Enthusiast",
     description:
       "With 11+ projects completed, 5+ years of experience, and 12+ tools in my tech stack, I build things that matter. My philosophy is simple: write clean, scalable code and never stop learning. From cloud infrastructure to pixel-perfect UIs, I bring ideas to life at every layer of the stack.",
@@ -148,9 +148,9 @@ export function ProfileCarousel({ className }: ProfileCarouselProps) {
       </div>
 
       {/* Mobile layout */}
-      <div className="md:hidden max-w-sm mx-auto text-center">
+      <div className="md:hidden max-w-sm sm:max-w-md mx-auto text-center">
         {/* Avatar */}
-        <div className="w-full aspect-square rounded-3xl overflow-hidden mb-6 shadow-2xl">
+        <div className="w-full aspect-[4/3] sm:aspect-square max-h-[320px] rounded-2xl overflow-hidden mb-5 shadow-2xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.imageUrl + currentIndex}
@@ -171,7 +171,7 @@ export function ProfileCarousel({ className }: ProfileCarouselProps) {
         </div>
 
         {/* Card content */}
-        <div className="px-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl">
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-5 sm:p-6 shadow-xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.title + currentIndex}

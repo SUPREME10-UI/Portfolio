@@ -164,9 +164,21 @@ const Projects = () => {
                                         rel="noopener noreferrer"
                                         className="view-details-btn"
                                     >
-                                        <span>Explore Project</span>
+                                        <span>{project.live ? 'Live Demo' : 'View Code'}</span>
                                         <ExternalLink size={15} />
                                     </a>
+                                    {project.live && project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="github-mini-btn"
+                                            aria-label={`${project.title} GitHub repository`}
+                                        >
+                                            <Github size={15} />
+                                            <span>Source</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>

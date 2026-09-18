@@ -10,7 +10,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const mailtoUrl = `mailto:ebenezeradjeiadjetey1@gmail.com?subject=${encodeURIComponent(formData.subject || 'Portfolio Inquiry from ' + formData.name)}&body=${encodeURIComponent(`Hi Kobby,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+        const mailtoUrl = `mailto:ebenezeradjeiadjetey1@gmail.com?subject=${encodeURIComponent(formData.subject || 'Portfolio Inquiry from ' + formData.name)}&body=${encodeURIComponent(`Hi Ebenezer,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
         window.location.href = mailtoUrl;
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 6000);
@@ -27,7 +27,7 @@ const Contact = () => {
                     <div className="contact-info">
                         <h3 className="mono">Let's build something together</h3>
                         <p>
-                            I'm currently looking for new opportunities and collaborations.
+                            I am currently looking for new opportunities and collaborations.
                             Whether you have an inquiry, project proposal, or just want to say hi,
                             I'd love to connect!
                         </p>
