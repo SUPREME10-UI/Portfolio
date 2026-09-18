@@ -8,11 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        "accent-primary": "hsl(190,80%,60%)",
+        "accent-secondary": "hsl(260,80%,60%)",
+        "bg-primary": "hsl(210,30%,12%)",
+        "bg-secondary": "hsl(210,30%,15%)",
+        "bg-tertiary": "hsl(210,30%,18%)",
       },
     },
   },

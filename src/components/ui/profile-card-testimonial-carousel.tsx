@@ -30,7 +30,7 @@ const slides: ProfileSlide[] = [
     description:
       "I am a passionate Full-Stack Developer with over 5 years of experience crafting digital solutions that bridge the gap between complex backend architectures and intuitive, high-performance user interfaces. I thrive on solving complex problems and turning abstract ideas into functional reality.",
     imageUrl: "/kobby.jpg",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/SUPREME10-UI",
     twitterUrl: "https://twitter.com",
     youtubeUrl: "https://youtube.com",
     linkedinUrl: "https://linkedin.com",
@@ -41,7 +41,7 @@ const slides: ProfileSlide[] = [
     description:
       "My journey began with a curiosity for how things work, which naturally led me to the world of software engineering. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical writing and mentorship.",
     imageUrl: "/kobby.jpg",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/SUPREME10-UI",
     twitterUrl: "https://twitter.com",
     youtubeUrl: "https://youtube.com",
     linkedinUrl: "https://linkedin.com",
@@ -50,9 +50,9 @@ const slides: ProfileSlide[] = [
     name: "Kobby",
     title: "Open-Source Enthusiast",
     description:
-      "With 50+ projects completed and 20+ tools in my tech stack, I build things that matter. My philosophy is simple: write clean, scalable code and never stop learning. From cloud infrastructure to pixel-perfect UIs, I bring ideas to life at every layer of the stack.",
+      "With 11+ projects completed, 5+ years of experience, and 12+ tools in my tech stack, I build things that matter. My philosophy is simple: write clean, scalable code and never stop learning. From cloud infrastructure to pixel-perfect UIs, I bring ideas to life at every layer of the stack.",
     imageUrl: "/kobby.jpg",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/SUPREME10-UI",
     twitterUrl: "https://twitter.com",
     youtubeUrl: "https://youtube.com",
     linkedinUrl: "https://linkedin.com",
@@ -248,3 +248,5 @@ export function ProfileCarousel({ className }: ProfileCarouselProps) {
     </div>
   );
 }
+
+export default ProfileCarousel;

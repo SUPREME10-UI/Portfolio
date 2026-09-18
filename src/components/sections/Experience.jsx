@@ -4,33 +4,33 @@ import './Experience.css';
 const Experience = () => {
     const experiences = [
         {
-            company: "TechNova Solutions",
-            role: "Senior Full-Stack Engineer",
-            period: "2022 - Present",
+            company: "Freelance — Client Projects",
+            role: "Full-Stack Developer",
+            period: "2026 - Present",
             description: [
-                "Architected and maintained microservices-based SaaS platforms serving 100k+ active users.",
-                "Optimized frontend performance, reducing initial load time by 40% using Next.js and code splitting.",
-                "Mentored a team of 5 junior developers and implemented CI/CD pipelines."
+                "Built and delivered full-stack web applications for real clients, including a body-shapers e-commerce platform (Shapers) and an artisan-discovery marketplace (Oga) — both deployed live on Vercel.",
+                "Developed an errand-runner platform (Errands) with real-time task matching, using React and modern JavaScript.",
+                "Maintained clean, component-driven codebases with TypeScript for type safety and long-term scalability."
             ]
         },
         {
-            company: "Digital Stream Corp",
-            role: "Software Developer",
-            period: "2020 - 2022",
+            company: "National Service — Ghana NSS",
+            role: "Software Developer (National Service Personnel)",
+            period: "Jan 2026 - Dec 2026",
             description: [
-                "Developed complex data visualization dashboards for enterprise clients using React and D3.js.",
-                "Built scalable RESTful APIs with Node.js and PostgreSQL with complex data migrations.",
-                "Collaborated with UI/UX designers to implement pixel-perfect responsive designs."
+                "Designed and deployed a digital attendance management system (NSS-ATTENDANCE) used to track and manage personnel records — live at nss-attendance-tau.vercel.app.",
+                "Replaced a manual paper-based attendance process with an automated web solution, reducing reporting time significantly.",
+                "Built with React and JavaScript, featuring role-based dashboards, export functionality, and real-time updates."
             ]
         },
         {
-            company: "Core Systems",
-            role: "Junior Web Developer",
-            period: "2018 - 2020",
+            company: "Self-Directed Projects",
+            role: "Full-Stack Developer",
+            period: "2025 - Present",
             description: [
-                "Maintained and updated corporate websites using HTML, CSS, and Vanilla JavaScript.",
-                "Assisted in the development of custom CMS solutions and plugin architectures.",
-                "Conducted unit testing and bug fixing across multiple browser environments."
+                "Continuously building personal and exploratory projects across JavaScript, TypeScript, and CSS — including a BMS (Business Management System) and a rehabilitation platform.",
+                "Established a strong open-source presence with 11+ public repositories on GitHub (github.com/SUPREME10-UI).",
+                "Practised rapid prototyping, UI/UX design, and deployment workflows using Vite, React, Next.js, and Vercel."
             ]
         }
     ];
@@ -39,8 +39,6 @@ const Experience = () => {
         <section className="section experience" id="experience">
             <div className="container">
                 <SectionHeader
-                    count={4}
-                    subtitle="Background"
                     title="Work Experience"
                 />
 

@@ -5,20 +5,44 @@ import './Navbar.css';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState(() => {
+        // Initialize from localStorage or default to dark
+        const saved = typeof window !== 'undefined' && localStorage.getItem('theme');
+        return saved ? saved : 'dark';
+    });
+
+    const [activeSection, setActiveSection] = useState('about');
 
     useEffect(() => {
+        const sections = ['about', 'skills', 'projects', 'experience', 'contact'];
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
+
+            const scrollPosition = window.scrollY + 180;
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const el = document.getElementById(sections[i]);
+                if (el && el.offsetTop <= scrollPosition) {
+                    setActiveSection(sections[i]);
+                    break;
+                }
+            }
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        // Apply theme on mount and when it changes
+        document.documentElement.setAttribute('data-theme', theme);
+        // Persist to localStorage
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('theme', theme);
+        }
+    }, [theme]);
+
     const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
+        setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
     };
 
     const navLinks = [
@@ -41,17 +65,22 @@ const Navbar = () => {
                 </div>
 
                 <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={() => setIsOpen(false)}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                    {navLinks.map((link) => {
+                        const targetId = link.href.replace('#', '');
+                        const isActive = activeSection === targetId;
+                        return (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className={isActive ? 'active' : ''}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </a>
+                        );
+                    })}
                     <div className="nav-socials">
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/SUPREME10-UI" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
                             <Github size={20} />
                         </a>
                         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">

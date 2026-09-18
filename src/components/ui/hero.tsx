@@ -262,7 +262,7 @@ export default function ShaderShowcase({
                 Kobby
               </span>
               <span className="block font-light text-white/80 italic text-xl sm:text-2xl md:text-3xl mt-2 text-cyan-200/90">
-                Crafting Scalable Digital Experiences
+                Engineering Elegant Solutions to Real-World Problems
               </span>
             </motion.h1>
 
@@ -272,7 +272,7 @@ export default function ShaderShowcase({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              I am a passionate <span className="text-white font-medium">Full-Stack Developer</span> with over 5 years of experience crafting digital solutions that bridge the gap between complex backend architectures and intuitive, high-performance user interfaces. I thrive on solving complex problems and turning abstract ideas into functional reality.
+              I'm a dedicated <span className="text-white font-medium">Full-Stack Developer</span> with a strong foundation in building intuitive, high-performance web applications from the ground up. I specialise in <span className="text-cyan-300 font-medium">React, TypeScript, and modern JavaScript</span> ecosystems — delivering end-to-end digital solutions that are clean, scalable, and impactful.
             </motion.p>
 
             {/* About Stats Cards */}
@@ -283,7 +283,7 @@ export default function ShaderShowcase({
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
-                <span className="block text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">50+</span>
+                <span className="block text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">11+</span>
                 <span className="text-[10px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Projects</span>
               </div>
               <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-orange-400/40 transition-all duration-300">
@@ -291,7 +291,7 @@ export default function ShaderShowcase({
                 <span className="text-[10px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Years Exp</span>
               </div>
               <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
-                <span className="block text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">20+</span>
+                <span className="block text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">12+</span>
                 <span className="text-[10px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Tech Tools</span>
               </div>
             </motion.div>
@@ -411,7 +411,7 @@ export default function ShaderShowcase({
                     </defs>
                     <text className="text-[11px] fill-white/90 font-medium tracking-widest font-mono">
                       <textPath href="#circle" startOffset="0%">
-                        KOBBY • FULL-STACK DEVELOPER • CREATIVE ENGINEER •
+                        KOBBY • SOFTWARE ENGINEER • FULL-STACK DEVELOPER •
                       </textPath>
                     </text>
                   </motion.svg>

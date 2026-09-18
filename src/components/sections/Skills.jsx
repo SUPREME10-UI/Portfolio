@@ -33,8 +33,6 @@ const Skills = () => {
         <section className="section skills" id="skills">
             <div className="container">
                 <SectionHeader
-                    count={2}
-                    subtitle="Tech Stack"
                     title="What I Work With"
                 />
 

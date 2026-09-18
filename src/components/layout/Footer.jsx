@@ -14,7 +14,7 @@ const Footer = () => {
                         <span className="mono">&lt;Kobby /&gt;</span>
                     </div>
                     <div className="footer-socials">
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
+                        <a href="https://github.com/SUPREME10-UI" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><Github size={20} /></a>
                         <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><Twitter size={20} /></a>
                     </div>
