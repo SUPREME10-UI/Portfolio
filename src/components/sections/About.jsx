@@ -24,7 +24,7 @@ const About = () => {
                             abstract ideas into functional reality.
                         </p>
                         <p>
-                            When I'm not coding, you'll find me exploring new technologies, contributing to
+                            When I am not coding, you'll find me exploring new technologies, contributing to
                             open-source projects, or sharing my knowledge through technical writing and
                             mentorship. My philosophy is simple: build things that matter, and never stop learning.
                         </p>

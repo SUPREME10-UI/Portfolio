@@ -1,64 +1,156 @@
+import { useState } from 'react';
 import SectionHeader from '../common/SectionHeader';
 import Button from '../common/Button';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, Globe } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
+    const [activeFilter, setActiveFilter] = useState('all');
+
     const projects = [
         {
-            title: "CloudScale SaaS Platform",
-            description: "A high-performance cloud management dashboard with real-time analytics and automated scaling triggers.",
-            tech: ["React", "Node.js", "AWS", "Kubernetes"],
-            github: "https://github.com",
-            live: "https://example.com",
-            image: "https://via.placeholder.com/600x400/121212/00f3ff?text=CloudScale"
+            title: "Oga - Artisans Marketplace",
+            description: "A full-featured web platform connecting households and enterprises with vetted local artisans, craftsmen, and technicians with booking and quote workflows.",
+            tech: ["TypeScript", "Next.js", "React", "Tailwind CSS"],
+            category: "fullstack",
+            github: "https://github.com/SUPREME10-UI/oga",
+            live: "https://oga-lilac.vercel.app",
+            image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+            status: "Live Demo",
+            featured: true,
         },
         {
-            title: "NeuroLink AI Interface",
-            description: "Next-gen neural network visualization tool for debugging complex deep learning models in 3D space.",
-            tech: ["Three.js", "Python", "TensorFlow", "FastAPI"],
-            github: "https://github.com",
-            live: "https://example.com",
-            image: "https://via.placeholder.com/600x400/121212/bf00ff?text=NeuroLink"
+            title: "Errands - Logistics & Delivery",
+            description: "On-demand errands and package delivery service web app connecting users with swift neighborhood couriers for hassle-free parcel dispatching.",
+            tech: ["JavaScript", "React", "Node.js", "Vercel"],
+            category: "fullstack",
+            github: "https://github.com/SUPREME10-UI/Errands",
+            live: "https://errands-phi.vercel.app",
+            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+            status: "Live Demo",
+            featured: true,
         },
         {
-            title: "CryptoFlow DEX",
-            description: "Decentralized exchange aggregator with smart routing and low-slippage execution across multiple chains.",
-            tech: ["Solidity", "Ether.js", "React", "GraphQL"],
-            github: "https://github.com",
-            live: "https://example.com",
-            image: "https://via.placeholder.com/600x400/121212/00f3ff?text=CryptoFlow"
+            title: "NSS Attendance System",
+            description: "Digital reporting and automated monthly attendance verification platform for National Service Scheme personnel to streamline verification.",
+            tech: ["React", "JavaScript", "REST APIs", "Vercel"],
+            category: "frontend",
+            github: "https://github.com/SUPREME10-UI/NSS-ATTENDANCE",
+            live: "https://nss-attendance-tau.vercel.app",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+            status: "Live Demo",
+            featured: true,
+        },
+        {
+            title: "UPSA LMS AI Chatbot",
+            description: "Conversational customer support assistant built for university learning management systems to answer student inquiries and resolve tickets 24/7.",
+            tech: ["Python", "NLP", "Machine Learning", "FastAPI"],
+            category: "ai",
+            github: "https://github.com/SUPREME10-UI/Customer-support-chatbot-for-the-UPSA-learning-management-system",
+            live: "https://github.com/SUPREME10-UI/Customer-support-chatbot-for-the-UPSA-learning-management-system",
+            image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+            status: "AI / ML Model",
+            featured: false,
+        },
+        {
+            title: "Shapers - Wellness Client Portal",
+            description: "Dedicated client web application for body shaping and fitness brand, offering specialized merchandise showcases, custom styling, and booking.",
+            tech: ["React", "JavaScript", "CSS3", "Vite"],
+            category: "frontend",
+            github: "https://github.com/SUPREME10-UI/Shapers",
+            live: "https://github.com/SUPREME10-UI/Shapers",
+            image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
+            status: "Client Web App",
+            featured: false,
+        },
+        {
+            title: "BMS - Enterprise Suite",
+            description: "Scalable business & facilities management software supporting inventory auditing, employee shift management, and operations telemetry.",
+            tech: ["TypeScript", "React", "State Management", "Tailwind"],
+            category: "fullstack",
+            github: "https://github.com/SUPREME10-UI/BMS",
+            live: "https://github.com/SUPREME10-UI/BMS",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+            status: "TypeScript App",
+            featured: false,
         }
     ];
+
+    const filterOptions = [
+        { label: "All Projects", value: "all" },
+        { label: "Full-Stack", value: "fullstack" },
+        { label: "Frontend", value: "frontend" },
+        { label: "AI & Tools", value: "ai" },
+    ];
+
+    const filteredProjects = activeFilter === 'all' 
+        ? projects 
+        : projects.filter(p => p.category === activeFilter);
 
     return (
         <section className="section projects" id="projects">
             <div className="container">
                 <SectionHeader
-                    count={3}
-                    subtitle="Portfolio"
                     title="Featured Projects"
                 />
 
+                {/* Filter Pills */}
+                <div className="projects-filter-bar">
+                    {filterOptions.map((filter) => (
+                        <button
+                            key={filter.value}
+                            className={`filter-pill mono ${activeFilter === filter.value ? 'active' : ''}`}
+                            onClick={() => setActiveFilter(filter.value)}
+                        >
+                            {filter.label}
+                        </button>
+                    ))}
+                </div>
+
                 <div className="projects-grid">
-                    {projects.map((project, idx) => (
+                    {filteredProjects.map((project, idx) => (
                         <div className="project-card" key={idx}>
                             <div className="project-image">
-                                <img src={project.image} alt={project.title} />
+                                <img src={project.image} alt={project.title} loading="lazy" />
+                                <div className="project-status-badge">
+                                    <span className="status-dot"></span>
+                                    <span>{project.status}</span>
+                                </div>
                                 <div className="project-overlay">
                                     <div className="project-links">
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="icon-link">
+                                        <a 
+                                            href={project.github} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="icon-link"
+                                            aria-label={`${project.title} GitHub repository`}
+                                        >
                                             <Github size={20} />
                                         </a>
-                                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="icon-link">
-                                            <ExternalLink size={20} />
-                                        </a>
+                                        {project.live && (
+                                            <a 
+                                                href={project.live} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                className="icon-link"
+                                                aria-label={`${project.title} Live Demo`}
+                                            >
+                                                <ExternalLink size={20} />
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </div>
 
                             <div className="project-info">
-                                <h3 className="project-title">{project.title}</h3>
+                                <div className="project-title-row">
+                                    <h3 className="project-title">{project.title}</h3>
+                                    {project.featured && (
+                                        <span className="featured-chip">
+                                            <Sparkles size={12} /> Featured
+                                        </span>
+                                    )}
+                                </div>
                                 <p className="project-description">{project.description}</p>
                                 <div className="project-tech mono">
                                     {project.tech.map((t, i) => (
@@ -66,9 +158,27 @@ const Projects = () => {
                                     ))}
                                 </div>
                                 <div className="project-footer">
-                                    <Button variant="outline" size="sm" className="view-details">
-                                        Details
-                                    </Button>
+                                    <a
+                                        href={project.live || project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="view-details-btn"
+                                    >
+                                        <span>{project.live ? 'Live Demo' : 'View Code'}</span>
+                                        <ExternalLink size={15} />
+                                    </a>
+                                    {project.live && project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="github-mini-btn"
+                                            aria-label={`${project.title} GitHub repository`}
+                                        >
+                                            <Github size={15} />
+                                            <span>Source</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -76,9 +186,15 @@ const Projects = () => {
                 </div>
 
                 <div className="more-projects">
-                    <Button variant="secondary" size="lg">
-                        View All Archive
-                    </Button>
+                    <a
+                        href="https://github.com/SUPREME10-UI?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary view-all-btn"
+                    >
+                        <Github size={18} />
+                        <span>View All Repositories on GitHub</span>
+                    </a>
                 </div>
             </div>
         </section>
