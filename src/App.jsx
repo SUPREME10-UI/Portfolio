@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './components/layout/Navbar'
-import Hero from './components/sections/Hero'
-import About from './components/sections/About'
+import ShaderShowcase from './components/ui/hero'
+import ShaderBackground from './components/ui/shader-background'
 import Skills from './components/sections/Skills'
 import Projects from './components/sections/Projects'
 import Experience from './components/sections/Experience'
@@ -15,11 +15,11 @@ function App() {
   useCursorGlow();
 
   return (
-    <div className="app">
+    <div className="app relative min-h-screen">
+      <ShaderBackground />
       <Navbar />
-      <main>
-        <Hero />
-        <div className="reveal"><About /></div>
+      <main className="relative z-10">
+        <ShaderShowcase showHeader={false} hideBackground={true} />
         <div className="reveal"><Skills /></div>
         <div className="reveal"><Projects /></div>
         <div className="reveal"><Experience /></div>
