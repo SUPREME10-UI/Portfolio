@@ -83,7 +83,7 @@ export function ProfileCarousel({ className }: ProfileCarouselProps) {
   return (
     <div className={cn("w-full max-w-5xl mx-auto px-4", className)}>
       {/* Desktop layout */}
-      <div className="hidden md:flex relative items-center">
+      <div className="hidden lg:flex relative items-center">
         {/* Avatar */}
         <div className="w-[420px] h-[470px] rounded-3xl overflow-hidden flex-shrink-0 shadow-2xl">
           <AnimatePresence mode="wait">
@@ -147,8 +147,8 @@ export function ProfileCarousel({ className }: ProfileCarouselProps) {
         </div>
       </div>
 
-      {/* Mobile layout */}
-      <div className="md:hidden max-w-sm sm:max-w-md mx-auto text-center">
+      {/* Mobile & Tablet layout */}
+      <div className="lg:hidden max-w-sm sm:max-w-md mx-auto text-center">
         {/* Avatar */}
         <div className="w-full aspect-[4/3] sm:aspect-square max-h-[320px] rounded-2xl overflow-hidden mb-5 shadow-2xl">
           <AnimatePresence mode="wait">

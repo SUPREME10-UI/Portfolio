@@ -140,3 +140,23 @@ img {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Extra small screen safety (< 400px) */
+@media (max-width: 400px) {
+    .container {
+        padding: 0 0.9rem;
+    }
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+    /* Prevent any single word / heading from overflowing */
+    h1, h2, h3 {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+}
+
+/* Ensure nothing escapes on any screen size */
+* {
+    min-width: 0;
+}

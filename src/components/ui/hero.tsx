@@ -116,7 +116,7 @@ export default function ShaderShowcase({
       )}
 
       {showHeader && (
-        <header className="relative z-20 flex items-center justify-between p-6">
+        <header className="relative z-20 hidden sm:flex items-center justify-between p-6">
           <motion.div
             className="flex items-center group cursor-pointer"
             whileHover={{ scale: 1.05 }}
@@ -177,43 +177,49 @@ export default function ShaderShowcase({
           </motion.div>
 
           {/* Navigation */}
-          <nav className="flex items-center space-x-2">
+          <nav className="flex items-center space-x-1">
             <a
-              href="#"
+              href="#about"
               className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
             >
-              Features
+              About
             </a>
             <a
-              href="#"
+              href="#skills"
               className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
             >
-              Pricing
+              Skills
             </a>
             <a
-              href="#"
+              href="#projects"
               className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
             >
-              Docs
+              Projects
+            </a>
+            <a
+              href="#experience"
+              className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
+            >
+              Experience
             </a>
           </nav>
 
-          {/* Login Button Group with Arrow */}
+          {/* Contact Button with Arrow gooey effect */}
           <div id="gooey-btn" className="relative flex items-center group" style={{ filter: "url(#gooey-filter)" }}>
             <button className="absolute right-0 px-2.5 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center justify-center -translate-x-10 group-hover:-translate-x-19 z-0">
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </button>
-            <button className="px-6 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center z-10">
-              Login
-            </button>
+            <a href="#contact" className="px-6 py-2 rounded-full bg-white text-black font-normal text-xs transition-all duration-300 hover:bg-white/90 cursor-pointer h-8 flex items-center z-10">
+              Contact
+            </a>
           </div>
         </header>
       )}
 
-      <main className="relative z-20 w-full min-h-screen flex items-center justify-center px-4 sm:px-8 lg:px-16 pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
-        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <main className="relative z-20 w-full min-h-screen flex items-center justify-center px-3 sm:px-8 lg:px-16 pt-20 sm:pt-28 pb-10 sm:pb-16 overflow-hidden">
+        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 items-center">
           {/* Left Column: About Me Bio, Stats, CTAs */}
           <div className="lg:col-span-7 text-left flex flex-col justify-center">
             <motion.div
@@ -258,7 +264,7 @@ export default function ShaderShowcase({
               >
                 Hi, I am
               </motion.span>
-              <span className="block font-black text-white drop-shadow-2xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl break-words">
+              <span className="block font-black text-white drop-shadow-2xl text-[1.9rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl break-words leading-tight">
                 Ebenezer Adjei
               </span>
               <span className="block font-light text-white/80 italic text-base sm:text-2xl md:text-3xl mt-2 text-cyan-200/90 leading-snug">
@@ -277,22 +283,22 @@ export default function ShaderShowcase({
 
             {/* About Stats Cards */}
             <motion.div
-              className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-xl"
+              className="grid grid-cols-3 gap-1.5 sm:gap-4 mb-5 sm:mb-8 max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
-                <span className="block text-xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">11+</span>
-                <span className="text-[9px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Projects</span>
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
+                <span className="block text-lg sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">11+</span>
+                <span className="text-[8px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Projects</span>
               </div>
-              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-4 text-center hover:border-orange-400/40 transition-all duration-300">
-                <span className="block text-xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">5+</span>
-                <span className="text-[9px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Years Exp</span>
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-4 text-center hover:border-orange-400/40 transition-all duration-300">
+                <span className="block text-lg sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">5+</span>
+                <span className="text-[8px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Years Exp</span>
               </div>
-              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
-                <span className="block text-xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">12+</span>
-                <span className="text-[9px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Tech Tools</span>
+              <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">
+                <span className="block text-lg sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-emerald-300">12+</span>
+                <span className="text-[8px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Tech Tools</span>
               </div>
             </motion.div>
 
@@ -331,9 +337,9 @@ export default function ShaderShowcase({
           </div>
 
           {/* Right Column: Picture Image Section + Pulsing Hologram Badge */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative w-full mt-4 lg:mt-0">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative w-full mt-2 lg:mt-0">
             <motion.div
-              className="relative w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[390px]"
+              className="relative w-full max-w-[230px] xs:max-w-[280px] sm:max-w-[340px] lg:max-w-[390px]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -368,7 +374,7 @@ export default function ShaderShowcase({
               </div>
 
               {/* Pulsing Border Badge Seal */}
-              <div className="absolute -bottom-4 -right-2 sm:-bottom-7 sm:-right-7 z-30 scale-85 sm:scale-100">
+              <div className="absolute -bottom-3 -right-1 xs:-bottom-4 xs:-right-2 sm:-bottom-7 sm:-right-7 z-30 scale-75 xs:scale-85 sm:scale-100">
                 <div className="relative w-22 h-22 sm:w-28 sm:h-28 flex items-center justify-center">
                   <PulsingBorder
                     colors={["#06b6d4", "#0891b2", "#f97316", "#00FF88", "#FFD700", "#FF6B35", "#ffffff"]}

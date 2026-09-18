@@ -8,7 +8,7 @@ interface ShaderBackgroundProps {
 export default function ShaderBackground({ className = "" }: ShaderBackgroundProps) {
   return (
     <div
-      className={`fixed inset-0 w-screen h-screen pointer-events-none z-0 overflow-hidden ${className}`}
+      className={`fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden ${className}`}
       aria-hidden="true"
     >
       <MeshGradient

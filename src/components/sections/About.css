@@ -114,7 +114,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .about-stats {
         grid-template-columns: 1fr;
         gap: var(--spacing-sm);
