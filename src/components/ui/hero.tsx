@@ -293,7 +293,7 @@ export default function ShaderShowcase({
                 <span className="text-[8px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Projects</span>
               </div>
               <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-4 text-center hover:border-orange-400/40 transition-all duration-300">
-                <span className="block text-lg sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">5+</span>
+                <span className="block text-lg sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200">3+</span>
                 <span className="text-[8px] sm:text-xs font-mono uppercase text-white/60 tracking-wider">Years Exp</span>
               </div>
               <div className="bg-white/[0.04] backdrop-blur-md border border-white/10 rounded-xl p-2 sm:p-4 text-center hover:border-cyan-400/40 transition-all duration-300">

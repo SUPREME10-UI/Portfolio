@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import SectionHeader from '../common/SectionHeader';
-import Button from '../common/Button';
-import { Github, ExternalLink, Sparkles, Globe } from 'lucide-react';
+import { Github, ExternalLink, Sparkles, ChevronLeft, ChevronRight, Layers } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('all');
+    const [currentPage, setCurrentPage] = useState(1);
+    const projectsSectionRef = useRef(null);
+    const itemsPerPage = 3;
 
     const projects = [
         {
@@ -73,6 +75,39 @@ const Projects = () => {
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
             status: "TypeScript App",
             featured: false,
+        },
+        {
+            title: "PhysioRehab - Patient Care Portal",
+            description: "Clinical rehabilitation tracking platform providing patients with prescribed recovery exercises, scheduling, and clinician messaging.",
+            tech: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+            category: "fullstack",
+            github: "https://github.com/SUPREME10-UI",
+            live: "https://github.com/SUPREME10-UI",
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+            status: "Clinical Web App",
+            featured: true,
+        },
+        {
+            title: "DevForge - Portfolio Engine",
+            description: "High-performance interactive showcase framework featuring dynamic shader aesthetics, customizable colorways, and responsive layouts.",
+            tech: ["React", "WebGL Shaders", "Tailwind CSS", "Vite"],
+            category: "frontend",
+            github: "https://github.com/SUPREME10-UI",
+            live: "https://github.com/SUPREME10-UI",
+            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+            status: "Frontend Engine",
+            featured: false,
+        },
+        {
+            title: "FinLedger - Ledger & Expense Analyzer",
+            description: "Automated cashflow and accounting telemetry dashboard with visual budgeting charts, transaction tagging, and exportable financial reports.",
+            tech: ["Python", "FastAPI", "React", "Chart.js"],
+            category: "ai",
+            github: "https://github.com/SUPREME10-UI",
+            live: "https://github.com/SUPREME10-UI",
+            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
+            status: "Analytics Tool",
+            featured: false,
         }
     ];
 
@@ -87,29 +122,67 @@ const Projects = () => {
         ? projects 
         : projects.filter(p => p.category === activeFilter);
 
+    const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentProjects = filteredProjects.slice(startIndex, startIndex + itemsPerPage);
+
+    const handleFilterChange = (filterVal) => {
+        setActiveFilter(filterVal);
+        setCurrentPage(1);
+    };
+
+    const handlePageChange = (page) => {
+        if (page < 1 || page > totalPages) return;
+        setCurrentPage(page);
+        
+        // Smoothly scroll up to project section header if scrolled past
+        if (projectsSectionRef.current) {
+            const rect = projectsSectionRef.current.getBoundingClientRect();
+            if (rect.top < -50) {
+                window.scrollTo({
+                    top: window.scrollY + rect.top - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
     return (
-        <section className="section projects" id="projects">
+        <section className="section projects" id="projects" ref={projectsSectionRef}>
             <div className="container">
                 <SectionHeader
                     title="Featured Projects"
                 />
 
-                {/* Filter Pills */}
-                <div className="projects-filter-bar">
-                    {filterOptions.map((filter) => (
-                        <button
-                            key={filter.value}
-                            className={`filter-pill mono ${activeFilter === filter.value ? 'active' : ''}`}
-                            onClick={() => setActiveFilter(filter.value)}
-                        >
-                            {filter.label}
-                        </button>
-                    ))}
+                {/* Filter & Page Info Bar */}
+                <div className="projects-controls-header">
+                    <div className="projects-filter-bar">
+                        {filterOptions.map((filter) => (
+                            <button
+                                key={filter.value}
+                                className={`filter-pill mono ${activeFilter === filter.value ? 'active' : ''}`}
+                                onClick={() => handleFilterChange(filter.value)}
+                            >
+                                {filter.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="projects-meta-info mono">
+                        <span className="page-indicator-badge">
+                            <Layers size={13} />
+                            <span>Page {currentPage} of {totalPages || 1}</span>
+                        </span>
+                        <span className="total-projects-badge">
+                            {filteredProjects.length} Projects
+                        </span>
+                    </div>
                 </div>
 
-                <div className="projects-grid">
-                    {filteredProjects.map((project, idx) => (
-                        <div className="project-card" key={idx}>
+                {/* Dynamic Projects Grid with Page Animation Key */}
+                <div className="projects-grid" key={`${activeFilter}-${currentPage}`}>
+                    {currentProjects.map((project, idx) => (
+                        <div className="project-card page-card-animate" key={project.title}>
                             <div className="project-image">
                                 <img src={project.image} alt={project.title} loading="lazy" />
                                 <div className="project-status-badge">
@@ -184,6 +257,45 @@ const Projects = () => {
                         </div>
                     ))}
                 </div>
+
+                {/* Dynamic Page by Page Pagination Bar */}
+                {totalPages > 1 && (
+                    <div className="pagination-bar">
+                        <button
+                            className="pagination-nav-btn prev-btn mono"
+                            onClick={() => handlePageChange(currentPage - 1)}
+                            disabled={currentPage === 1}
+                            aria-label="Previous page"
+                        >
+                            <ChevronLeft size={16} />
+                            <span>Previous</span>
+                        </button>
+
+                        <div className="pagination-numbers mono">
+                            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                                <button
+                                    key={pageNum}
+                                    className={`page-number-btn ${currentPage === pageNum ? 'active' : ''}`}
+                                    onClick={() => handlePageChange(pageNum)}
+                                    aria-label={`Go to page ${pageNum}`}
+                                    aria-current={currentPage === pageNum ? 'page' : undefined}
+                                >
+                                    {pageNum}
+                                </button>
+                            ))}
+                        </div>
+
+                        <button
+                            className="pagination-nav-btn next-btn mono"
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            disabled={currentPage === totalPages}
+                            aria-label="Next page"
+                        >
+                            <span>Next</span>
+                            <ChevronRight size={16} />
+                        </button>
+                    </div>
+                )}
 
                 <div className="more-projects">
                     <a

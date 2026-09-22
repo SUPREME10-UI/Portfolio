@@ -18,12 +18,7 @@ const Skills = () => {
             skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL"]
         },
         {
-            title: "DevOps",
-            icon: <Terminal className="skill-icon" />,
-            skills: ["Docker", "AWS", "CI/CD", "Linux", "Kubernetes"]
-        },
-        {
-            title: "Other",
+            title: "Tools & Core",
             icon: <Cpu className="skill-icon" />,
             skills: ["Git", "GraphQL", "REST APIs", "Unit Testing", "System Design"]
         }

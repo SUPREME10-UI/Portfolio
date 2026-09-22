@@ -14,7 +14,7 @@ const About = () => {
                 <div className="about-grid">
                     <div className="about-content">
                         <p className="large-text">
-                            I am a passionate <span className="accent">Full-Stack Developer</span> with over 5 years of experience
+                            I am a passionate <span className="accent">Full-Stack Developer</span> with over 3 years of experience
                             crafting digital solutions that bridge the gap between complex backend systems and
                             intuitive user interfaces.
                         </p>
@@ -31,11 +31,11 @@ const About = () => {
 
                         <div className="about-stats">
                             <div className="stat-item">
-                                <span className="stat-number">50+</span>
+                                <span className="stat-number">11+</span>
                                 <span className="stat-label mono">Projects Completed</span>
                             </div>
                             <div className="stat-item">
-                                <span className="stat-number">5+</span>
+                                <span className="stat-number">3+</span>
                                 <span className="stat-label mono">Years Experience</span>
                             </div>
                             <div className="stat-item">

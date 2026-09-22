@@ -28,7 +28,7 @@ const slides: ProfileSlide[] = [
     name: "Ebenezer Adjei",
     title: "Full-Stack Developer",
     description:
-      "I am a passionate Full-Stack Developer with over 5 years of experience crafting digital solutions that bridge the gap between complex backend architectures and intuitive, high-performance user interfaces. I thrive on solving complex problems and turning abstract ideas into functional reality.",
+      "I am a passionate Full-Stack Developer with over 3 years of experience crafting digital solutions that bridge the gap between complex backend architectures and intuitive, high-performance user interfaces. I thrive on solving complex problems and turning abstract ideas into functional reality.",
     imageUrl: "/kobby.jpg",
     githubUrl: "https://github.com/SUPREME10-UI",
     twitterUrl: "https://twitter.com",
@@ -50,7 +50,7 @@ const slides: ProfileSlide[] = [
     name: "Ebenezer Adjei",
     title: "Open-Source Enthusiast",
     description:
-      "With 11+ projects completed, 5+ years of experience, and 12+ tools in my tech stack, I build things that matter. My philosophy is simple: write clean, scalable code and never stop learning. From cloud infrastructure to pixel-perfect UIs, I bring ideas to life at every layer of the stack.",
+      "With 11+ projects completed, 3+ years of experience, and 12+ tools in my tech stack, I build things that matter. My philosophy is simple: write clean, scalable code and never stop learning. From cloud infrastructure to pixel-perfect UIs, I bring ideas to life at every layer of the stack.",
     imageUrl: "/kobby.jpg",
     githubUrl: "https://github.com/SUPREME10-UI",
     twitterUrl: "https://twitter.com",

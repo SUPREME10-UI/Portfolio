@@ -18,12 +18,22 @@ const Navbar = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
 
-            const scrollPosition = window.scrollY + 180;
+            // When near top of the page, actively lock highlight to 'about'
+            if (window.scrollY < 100) {
+                setActiveSection('about');
+                return;
+            }
+
+            const scrollPosition = window.scrollY + 200;
             for (let i = sections.length - 1; i >= 0; i--) {
                 const el = document.getElementById(sections[i]);
-                if (el && el.offsetTop <= scrollPosition) {
-                    setActiveSection(sections[i]);
-                    break;
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    const absoluteTop = rect.top + window.scrollY;
+                    if (absoluteTop <= scrollPosition) {
+                        setActiveSection(sections[i]);
+                        break;
+                    }
                 }
             }
         };
@@ -57,7 +67,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container nav-container">
                 <div className="logo">
-                    <a href="#" className="mono">
+                    <a href="#about" className="mono" onClick={() => setActiveSection('about')}>
                         <span className="accent">&lt;</span>
                         Ebenezer Adjei
                         <span className="accent"> /&gt;</span>
@@ -73,7 +83,10 @@ const Navbar = () => {
                                 key={link.name}
                                 href={link.href}
                                 className={isActive ? 'active' : ''}
-                                onClick={() => setIsOpen(false)}
+                                onClick={() => {
+                                    setActiveSection(targetId);
+                                    setIsOpen(false);
+                                }}
                             >
                                 {link.name}
                             </a>
