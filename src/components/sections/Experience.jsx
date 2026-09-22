@@ -6,7 +6,7 @@ const Experience = () => {
         {
             company: "Freelance — Client Projects",
             role: "Full-Stack Developer",
-            period: "2026 - Present",
+            period: "2022 - Present",
             description: [
                 "Built and delivered full-stack web applications for real clients, including a body-shapers e-commerce platform (Shapers) and an artisan-discovery marketplace (Oga) — both deployed live on Vercel.",
                 "Developed an errand-runner platform (Errands) with real-time task matching, using React and modern JavaScript.",
@@ -16,7 +16,7 @@ const Experience = () => {
         {
             company: "National Service — Ghana NSS",
             role: "Software Developer (National Service Personnel)",
-            period: "Jan 2026 - Dec 2026",
+            period: "Nov 2025 - Oct 2026",
             description: [
                 "Designed and deployed a digital attendance management system (NSS-ATTENDANCE) used to track and manage personnel records — live at nss-attendance-tau.vercel.app.",
                 "Replaced a manual paper-based attendance process with an automated web solution, reducing reporting time significantly.",
@@ -26,7 +26,7 @@ const Experience = () => {
         {
             company: "Self-Directed Projects",
             role: "Full-Stack Developer",
-            period: "2025 - Present",
+            period: "2022 - Present",
             description: [
                 "Continuously building personal and exploratory projects across JavaScript, TypeScript, and CSS — including a BMS (Business Management System) and a rehabilitation platform.",
                 "Established a strong open-source presence with 11+ public repositories on GitHub (github.com/SUPREME10-UI).",
