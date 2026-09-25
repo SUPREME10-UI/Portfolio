@@ -18,12 +18,7 @@ const Skills = () => {
             skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL"]
         },
         {
-            title: "DevOps",
-            icon: <Terminal className="skill-icon" />,
-            skills: ["Docker", "AWS", "CI/CD", "Linux", "Kubernetes"]
-        },
-        {
-            title: "Other",
+            title: "Tools & Core",
             icon: <Cpu className="skill-icon" />,
             skills: ["Git", "GraphQL", "REST APIs", "Unit Testing", "System Design"]
         }
@@ -33,8 +28,6 @@ const Skills = () => {
         <section className="section skills" id="skills">
             <div className="container">
                 <SectionHeader
-                    count={2}
-                    subtitle="Tech Stack"
                     title="What I Work With"
                 />
 

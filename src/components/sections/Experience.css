@@ -95,9 +95,48 @@
     color: var(--accent-primary);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-dot {
+        left: -25px;
+        width: 10px;
+        height: 10px;
+        top: 6px;
+    }
+
+    .timeline-item {
+        padding-bottom: 2rem;
+    }
+
+    .timeline-content {
+        padding: 1.15rem;
+    }
+
+    .timeline-content:hover {
+        transform: none;
+    }
+
     .timeline-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 6px;
+    }
+
+    .company-name {
+        font-size: 1.15rem;
+    }
+
+    .role-title {
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .exp-description li {
+        font-size: 0.88rem;
+        padding-left: 18px;
+        margin-bottom: 8px;
     }
 }

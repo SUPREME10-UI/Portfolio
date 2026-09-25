@@ -34,6 +34,25 @@
   --nav-height: 80px;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 1.25rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3.5rem;
+    --nav-height: 68px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2.75rem;
+    --nav-height: 60px;
+  }
+}
+
 [data-theme='light'] {
   --bg-primary: #ffffff;
   --bg-secondary: #f5f5f5;
@@ -45,3 +64,4 @@
   
   --border-color: rgba(0, 0, 0, 0.1);
 }
+
